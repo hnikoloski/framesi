@@ -1,0 +1,31 @@
+#store-locator {
+  padding: 0 $sidePadding;
+  .app-wrapper {
+    display: flex;
+    align-items: flex-start;
+    align-content: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    flex-direction: row;
+    #map {
+      width: 1455.3276rem;
+      max-width: 1455.3276rem;
+      flex: 0 0 1455.3276rem;
+      height: 1071.7529rem;
+    }
+    #sidebar {
+      flex: 0 0 calc(100% - 1455.3276rem);
+      max-width: calc(100% - 1455.3276rem);
+      width: calc(100% - 1455.3276rem);
+      padding: 47.0067rem 103.4148rem;
+      ul {
+        width: 100%;
+        li {
+          &:not(:last-of-type) {
+            margin-bottom: 84.6121rem;
+          }
+        }
+      }
+    }
+  }
+}

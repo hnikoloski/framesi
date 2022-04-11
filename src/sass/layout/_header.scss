@@ -1,0 +1,200 @@
+#masthead {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: 1024;
+  .site-logo-wrapper {
+    width: 376.0537rem;
+    height: 131.6188rem;
+  }
+  .toolbar {
+    .menu-trigger {
+      display: block;
+      position: relative;
+      width: 56.408rem;
+      height: 37.6054rem;
+      cursor: pointer;
+      span {
+        display: block;
+        height: 2px;
+        background: #000;
+        position: absolute;
+        right: 0;
+
+        &:nth-of-type(1) {
+          top: 0;
+          width: 60%;
+        }
+        &:nth-of-type(2) {
+          @include ver-center();
+          width: 100%;
+        }
+        &:nth-of-type(3) {
+          bottom: 0;
+          width: 80%;
+        }
+      }
+      &:hover {
+        span {
+          &:nth-of-type(1),
+          &:nth-of-type(2),
+          &:nth-of-type(3) {
+            width: 100%;
+          }
+        }
+      }
+      &.active {
+        span {
+          &:nth-of-type(1),
+          &:nth-of-type(3) {
+            top: 50%;
+            right: 0%;
+            width: 100%;
+          }
+          &:nth-of-type(1) {
+            @include transform(rotate(45deg) translate(0, -50%));
+          }
+          &:nth-of-type(2) {
+            width: 0;
+          }
+          &:nth-of-type(3) {
+            @include transform(rotate(-45deg) translate(0, -50%));
+          }
+        }
+      }
+    }
+  }
+  .side-menu-wrapper {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    align-content: flex-start;
+    position: fixed;
+    right: 0;
+    top: 60rem;
+    width: 846.1207rem;
+    height: 100%;
+    max-height: 100vh;
+    overflow-y: auto;
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(31.2125rem);
+    -webkit-backdrop-filter: blur(31.2125rem);
+    @include transform(scaleX(0));
+    transition: transform 0.35s ease-in-out;
+    -moz-transition: transform 0.35s ease-in-out;
+    -webkit-transition: transform 0.35s ease-in-out;
+    transform-origin: right;
+    -webkit-transform-origin: right;
+    -moz-transform-origin: right;
+    padding: 178.6255rem 47.0067rem 75.2107rem 75.2107rem;
+    &::before {
+      content: "";
+      position: absolute;
+      width: 1.8803rem;
+      height: calc(100% - 178.6255rem);
+      left: 74rem;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.4);
+    }
+    &.active {
+      @include transform(scaleX(1));
+    }
+    .sidebar-close {
+      display: block;
+      position: absolute;
+      width: 47.0067rem;
+      height: 47.0067rem;
+      cursor: pointer;
+      top: 56.408rem;
+      left: 37.6054rem;
+      span {
+        display: block;
+        width: 100%;
+        height: 2px;
+        background: #000;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform-origin: 0 0;
+        &:nth-of-type(1) {
+          @include transform(rotate(45deg) translate(-50%, -50%));
+        }
+        &:nth-of-type(2) {
+          @include transform(rotate(-45deg) translate(-50%, -50%));
+        }
+      }
+      &:hover {
+        @include transform(scale(1.1));
+      }
+    }
+    .site-menu {
+      padding-left: 65.8094rem;
+      li {
+        &:not(:last-of-type) {
+          margin-bottom: 103.4148rem;
+        }
+        a {
+          color: #000;
+          font-size: 52.6475rem;
+          font-weight: $bold;
+          text-transform: uppercase;
+          position: relative;
+          &:after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 1px;
+            background: #000;
+            @include transform(scaleX(0));
+            transform-origin: right;
+            transition: transform 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+          }
+          &:hover {
+            &:after {
+              @include transform(scaleX(1));
+              transform-origin: left;
+            }
+          }
+        }
+      }
+    }
+    .bottom {
+      padding-left: 65.8094rem;
+      .socials {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        align-content: center;
+        flex-wrap: wrap;
+        li {
+          flex: 0 0 47.0067rem;
+          max-width: 47.0067rem;
+          width: 47.0067rem;
+          height: 47.0067rem;
+          &:not(:last-of-type) {
+            margin-right: 28.204rem;
+          }
+          a {
+            display: block;
+            width: 100%;
+            height: 100%;
+            img {
+              @include borderRadius(50%);
+              @include fullSizeImg(cover);
+            }
+          }
+        }
+      }
+    }
+  }
+}

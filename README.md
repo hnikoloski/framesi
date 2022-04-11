@@ -1,2 +1,16 @@
-# wp-starter
-Wordpress Starter theme Template
+# Framesi
+
+### Status:
+
+```
+In development
+```
+
+Wordpress Theme
+
+##### Commands:
+
+```sh
+npm i
+npm run prod
+```

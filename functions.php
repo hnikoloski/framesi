@@ -210,11 +210,3 @@ if (function_exists('acf_add_options_page')) {
         'parent_slug'    => 'theme-general-settings',
     ));
 }
-
-function my_acf_init()
-{
-
-    acf_update_setting('google_api_key', 'AIzaSyCEVwnbsyXBMYA3iG-sAO5cPqj_IWFmqf8');
-}
-
-add_action('acf/init', 'my_acf_init');

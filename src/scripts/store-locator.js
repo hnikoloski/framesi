@@ -18,7 +18,8 @@ jQuery(document).ready(function ($) {
                 const sideBarHtml = stores.map((store) => {
                     let storeName = store.title;
                     return (
-                        `<li data-lat="${store.location.lat}" data-lng="${store.location.lng}"><h3>${storeName}</h3>
+                        `<li data-lat="${store.location.lat}" data-lng="${store.location.lng}">
+                            <h3>${storeName}</h3>
                         </li>`
                     );
                 });
@@ -26,16 +27,16 @@ jQuery(document).ready(function ($) {
 
             })
             .then(() => {
-                // Create leaflet map with markers
                 let map = L.map('map', {
-                    center: [48.280578, 16.411830],
+                    center: [42.00074459304965, 21.39977212414552],
                     zoom: 12,
                     layers: [
                         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
                             attribution: '&copy; <a href="https://digital-orange.com">Digital-Orange</a>'
                         })
-                    ]
+                    ],
                 });
+
 
                 // Add locate control
                 L.control.locate({

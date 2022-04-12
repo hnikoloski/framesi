@@ -9,9 +9,24 @@
   top: 0;
   width: 100%;
   z-index: 1024;
+  transition: 0.6s;
+  &.sticky {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    padding: 28.204rem $sidePadding;
+    .site-logo-wrapper {
+      height: 84.6121rem;
+    }
+    .side-menu-wrapper {
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+    }
+  }
   .site-logo-wrapper {
     width: 376.0537rem;
     height: 131.6188rem;
+    transition: 0.6s;
   }
   .toolbar {
     .menu-trigger {
@@ -20,6 +35,11 @@
       width: 56.408rem;
       height: 37.6054rem;
       cursor: pointer;
+      opacity: 1;
+
+      * {
+        transition: 0.6s;
+      }
       span {
         display: block;
         height: 2px;
@@ -50,6 +70,7 @@
         }
       }
       &.active {
+        opacity: 0;
         span {
           &:nth-of-type(1),
           &:nth-of-type(3) {
@@ -79,14 +100,14 @@
     align-content: flex-start;
     position: fixed;
     right: 0;
-    top: 60rem;
+    top: 0;
     width: 846.1207rem;
-    height: 100%;
-    max-height: 100vh;
+    height: 100vh;
+    // max-height: 100vh;
     overflow-y: auto;
     background: rgba(255, 255, 255, 0.6);
-    backdrop-filter: blur(31.2125rem);
-    -webkit-backdrop-filter: blur(31.2125rem);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     @include transform(scaleX(0));
     transition: transform 0.35s ease-in-out;
     -moz-transition: transform 0.35s ease-in-out;
@@ -95,6 +116,9 @@
     -webkit-transform-origin: right;
     -moz-transform-origin: right;
     padding: 178.6255rem 47.0067rem 75.2107rem 75.2107rem;
+    * {
+      transition: 0.6s;
+    }
     &::before {
       content: "";
       position: absolute;

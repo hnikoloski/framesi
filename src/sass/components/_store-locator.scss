@@ -21,8 +21,15 @@
       ul {
         width: 100%;
         li {
+          border-left: 5.6408rem solid transparent;
+          padding-left: 47.0067rem;
+          cursor: pointer;
           &:not(:last-of-type) {
             margin-bottom: 84.6121rem;
+          }
+          &:hover,
+          &.active {
+            border-color: #000;
           }
         }
       }
